@@ -1,0 +1,13 @@
+<launch>
+    <!-- 
+        这个启动文件适用于垃圾分类。
+        以下节点将会被启动：
+        * 通用 USB V4L 相机节点
+        * 垃圾分类主程序节点
+        * 串口通讯节点
+     -->
+    <!-- <node name="camera_usb_v4l" pkg="camera_usb_v4l" type="camera_usb_v4l_node" output="screen" respawn="true"></node> -->
+    <node name="uart_process_main" pkg="uart_process_2" type="rm2020_uart_2stm32" output="screen" respawn="true"></node>
+    <node name="yolo" pkg="yolo" type="yolo_node" output="screen" respawn="true" ></node>
+    <!-- <node name="sagitari_debug" pkg="sagitari_debug" type="sagitari_debug_node" output="screen" respawn="false"></node> -->
+</launch>
